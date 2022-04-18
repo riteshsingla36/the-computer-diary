@@ -6,6 +6,23 @@
     margin: 5px;
 }
 
+.course-name:hover {
+    animation: color 1s forwards;
+}
+
+@keyframes color {
+   to{
+        color: green;
+    }
+}
+
+@keyframes bgcolor {
+    to {
+        background-color: green;
+        color: white;
+    }
+}
+
 .course-name {
     font-size: 16px;
     margin: 0px;
@@ -15,6 +32,11 @@
 .tutor-details {
     font-size: 10px;
     color: gray;
+    
+}
+
+.tutor-details:hover {
+    animation: color 1s forwards;
 }
 
 .details {
@@ -40,4 +62,8 @@
     color: gray;
     padding: 8px;
     border-radius: 5px;
+}
+
+.details button:hover {
+    animation: bgcolor 1s forwards;
 }
