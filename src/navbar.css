@@ -28,17 +28,13 @@
 
 .right .name-init {
     color: purple;
-    font-family: 'Redressed', cursive;
-font-family: 'Shizuru', cursive;
-font-family: 'Updock', cursive;
+
 font-size: larger;
 }
 
 .right .name-end {
     color: #E99927;
-    font-family: 'Redressed', cursive;
-font-family: 'Shizuru', cursive;
-font-family: 'Updock', cursive;
+ 
 font-size: larger;
 }
 
@@ -69,8 +65,8 @@ font-size: larger;
 }
 
 .right img {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
 }
 
 .left {
