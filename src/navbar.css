@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Redressed&family=Shizuru&family=Updock&display=swap');
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+    border-bottom: 1px solid silver;
+    margin-bottom: 10px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.right span:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.right .name-init {
+    color: purple;
+    font-family: 'Redressed', cursive;
+font-family: 'Shizuru', cursive;
+font-family: 'Updock', cursive;
+font-size: larger;
+}
+
+.right .name-end {
+    color: #E99927;
+    font-family: 'Redressed', cursive;
+font-family: 'Shizuru', cursive;
+font-family: 'Updock', cursive;
+font-size: larger;
+}
+
+.right .search {
+    display: flex;
+    justify-content: center;
+}
+.right .search-btn {
+    color: grey;
+}
+
+.right .search input {
+    background-color: rgb(244, 243, 243);
+    border: none;
+    width: 200px;
+    padding: 5px;
+    border-radius: 3px 0 0 3px;
+}
+
+.right .search input:focus {
+    outline: none;
+}
+
+.right .search button {
+    background-color: rgb(244, 243, 243);
+    border: none;
+    border-radius: 0 3px 3px 0;
+}
+
+.right img {
+    width: 50px;
+    height: 50px;
+}
+
+.left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.left span {
+    color: gray;
+    font-size: large;
+}
+
+.left span:hover {
+    animation: color 1s forwards;
+}
+
+.left button {
+    background-color: transparent;
+    border: 1px solid silver;
+    border-radius: 5px;
+    padding: 6px 8px;
+    
+}
+
+.left button:hover {
+    animation: bgcolor 1s forwards;
+}

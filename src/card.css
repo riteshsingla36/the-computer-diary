@@ -12,13 +12,13 @@
 
 @keyframes color {
    to{
-        color: green;
+        color: rgb(12,187,75);
     }
 }
 
 @keyframes bgcolor {
     to {
-        background-color: green;
+        background-color: rgb(12,187,75);
         color: white;
     }
 }
