@@ -1,0 +1,43 @@
+.card {
+    border: 1px solid silver;
+    width: fit-content;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 5px;
+}
+
+.course-name {
+    font-size: 16px;
+    margin: 0px;
+    font-weight: bold;
+}
+
+.tutor-details {
+    font-size: 10px;
+    color: gray;
+}
+
+.details {
+    padding: 20px;
+}
+
+.timings {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-size: 25px;
+    padding: 15px 0;
+    font-weight: bold;
+
+}
+
+.details button {
+    background-color: transparent;
+    border: 1px solid silver;
+    color: gray;
+    padding: 8px;
+    border-radius: 5px;
+}
