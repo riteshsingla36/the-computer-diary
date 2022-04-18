@@ -12,6 +12,9 @@ function App() {
     <>
       <Navbar />
       <div className="App">
+        <div className='image'>
+          <img src='https://trajectory.imgix.net/blog/bad-hero-message_190726_164138.png?auto=compress%2Cformat&fit=clip&q=40&w=1170&s=b1542179020a1e59bee0948b55953823' />
+        </div>
         <div className='upper'>
           <span><LibraryBooksIcon /></span>
           <span className='black'>&nbsp;&nbsp;Trending</span> <span className='green'> Books</span>
