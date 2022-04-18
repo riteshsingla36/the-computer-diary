@@ -11,7 +11,7 @@ const Card = () => {
 
       <div className="details">
         <p className="course-name"> Python full stack course</p>
-        <p className="tutor-details">By Kuldeep Air</p>
+        <p className="tutor-details">By Kuldeep Sir</p>
         <hr />
         <div className="timings">
           <span>4.5 Hours</span>
