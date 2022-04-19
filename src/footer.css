@@ -1,0 +1,40 @@
+.footer {
+    background-color: rgb(245,247,249);
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer .head {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.social{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social span {
+    background-color: white;
+    display: flex;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.facebook {
+   color: rgb(19,156,247);
+}
+
+.twitter {
+    color: rgb(28,155,241);
+}
+
+.youtube {
+    color: rgb(255,1,1);
+}
+
+.linkedin {
+    color: rgb(10,103,195);
+}
