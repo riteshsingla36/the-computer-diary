@@ -1,8 +1,6 @@
-//name, img, desc
+const mongoose = require("mongoose")
 
-const mongoose = require('mongoose');
-
-const quizSchema = new mongoose.Schema({
+const youtubeSchema = mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -12,16 +10,16 @@ const quizSchema = new mongoose.Schema({
         type: String,
         default: ""
     },
-    description: {
+    link: {
         type: String,
         required: true
     },
     hours: {
-        type: Number
+        type: Number,
+        required: true
     }
+})
 
-});
+const Youtube = mongoose.model("youtube", youtubeSchema)
 
-const Quiz = mongoose.model("quiz", quizSchema)
-module.exports = Quiz;
-
+module.exports = Youtube

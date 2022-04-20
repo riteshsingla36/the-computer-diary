@@ -1,5 +1,5 @@
 import React from "react";
-import "./card.css";
+import "../Css/card.css";
 
 const Card = () => {
   return (
@@ -15,7 +15,7 @@ const Card = () => {
         <hr />
         <div className="timings">
           <span>4.5 Hours</span>
-          <span>Quiz</span>
+          <span>1 ebook</span>
         </div>
 
         <div className="price">Free</div>

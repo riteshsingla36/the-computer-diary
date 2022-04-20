@@ -2,19 +2,23 @@
 
 const mongoose = require("mongoose")
 
-const questionSchema =   mongoose.Schema({
-    quiz : {
-        type : mongoose.Schema.Types.ObjectId,
-        ref : "quiz" 
+const questionSchema = mongoose.Schema({
+    quiz: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "quiz"
     },
-    options : [
+    question: {
+        type: String
+    },
+    options: [
         {
-            type : Object,
-            required : true
+            type: Object,
+            required: true
         }
     ]
 }, {
-    versionKey : false,
+    versionKey: false,
+    timeStamps: true
 })
 
 const Question = mongoose.model("question", questionSchema)
