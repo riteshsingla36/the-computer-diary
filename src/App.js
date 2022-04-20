@@ -1,146 +1,42 @@
 import './App.css';
-import Card from './Card';
-import CardQuiz from "./CardQuiz"
-import CardYoutube from "./CardYoutube";
-import Navbar from './Navbar';
-import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
-import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
-import QuizIcon from '@mui/icons-material/Quiz';
+
+import Navbar from './Components/Navbar';
+
 import { Container } from '@mui/material';
-import { useState } from 'react';
-import Box from '@mui/material/Box';
-import Tabs, { tabsClasses } from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Footer from './Footer';
+import Footer from './Components/Footer';
+import { Route, Routes } from 'react-router-dom';
+import Home from './Components/Home';
+import QuizPage from './Components/QuizPage';
+import Login from './Components/Login';
+import Signup from './Components/Signup';
+import AdminHome from './Components/Admin/AdminHome';
+import CreateQuiz from './Components/Admin/CreateQuiz';
+import CreateQuestion from './Components/Admin/CreateQuestion';
+import CreateYoutube from './Components/Admin/CreateYoutube';
+
+
 
 function App() {
-  const [value, setValue] = useState(0);
-  const arr = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 11, 1, 1, 11, 1, 1, 1, 1, 1, 1, 1]
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
   return (
-    <Container maxWidth="xl">
-      <Navbar />
-      <div className="App">
-        <div className='image'>
-          <img src='https://trajectory.imgix.net/blog/bad-hero-message_190726_164138.png?auto=compress%2Cformat&fit=clip&q=40&w=1170&s=b1542179020a1e59bee0948b55953823' />
+    <>
+      <Container maxWidth="xl">
+        <Navbar />
+        <div className="App">
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/quiz/:id' element={<QuizPage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path='/admin/home' element={<AdminHome />} />
+            <Route path="/admin/createquiz" element={<CreateQuiz />} />
+            <Route path="/admin/createquestion/:id" element={<CreateQuestion />} />
+            <Route path="/admin/createyoutube" element={<CreateYoutube />} />
+          </Routes>
         </div>
-        <div className='upper'>
-          <span><LibraryBooksIcon /></span>
-          <span className='black'>&nbsp;&nbsp;Trending</span> <span className='green'> Books</span>
-        </div>
-        {/* <div className='inner'>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-        </div> */}
-
-        <Box
-          sx={{
-            maxWidth: "100%",
-            bgcolor: 'background.paper',
-          }}
-        >
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            variant="scrollable"
-            scrollButtons
-            aria-label="visible arrows tabs example"
-            sx={{
-              [`& .${tabsClasses.scrollButtons}`]: {
-                '&.Mui-disabled': { opacity: 0.3 },
-              },
-            }}
-          >
-
-            {arr.map(ele => {
-              return <Card />
-            })}
-          </Tabs>
-        </Box>
-
-        <div className='upper'>
-          <span><QuizIcon /></span>
-          <span className='black'>&nbsp;&nbsp;Trending</span> <span className='green'> Quizzes</span>
-        </div>
-        {/* <div className='inner'>
-          <CardQuiz />
-          <CardQuiz />
-          <CardQuiz />
-          <CardQuiz />
-        </div> */}
-
-        <Box
-          sx={{
-            flexGrow: 1,
-            maxWidth: "100%",
-            bgcolor: 'background.paper',
-          }}
-        >
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            variant="scrollable"
-            scrollButtons
-            aria-label="visible arrows tabs example"
-            sx={{
-              [`& .${tabsClasses.scrollButtons}`]: {
-                '&.Mui-disabled': { opacity: 0.3 },
-              },
-            }}
-          >
-
-            {arr.map(ele => {
-              return <CardQuiz />
-            })}
-          </Tabs>
-        </Box>
-
-        <div className='upper'>
-          <span><OndemandVideoIcon /></span>
-          <span className='black'>&nbsp;&nbsp;Trending</span> <span className='green'> Videos</span>
-        </div>
-
-        {/* <div className='inner'>
-          <CardYoutube />
-          <CardYoutube />
-          <CardYoutube />
-          <CardYoutube />
-        </div> */}
-
-
-        <Box
-          sx={{
-            flexGrow: 1,
-            maxWidth: "100%",
-            bgcolor: 'background.paper',
-          }}
-        >
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            variant="scrollable"
-            scrollButtons
-            aria-label="visible arrows tabs example"
-            sx={{
-              [`& .${tabsClasses.scrollButtons}`]: {
-                '&.Mui-disabled': { opacity: 0.3 },
-              },
-            }}
-          >
-
-            {arr.map(ele => {
-              return <CardYoutube />
-            })}
-          </Tabs>
-        </Box>
-      </div>
+      </Container>
       <Footer />
-    </Container>
+    </>
   );
 }
 

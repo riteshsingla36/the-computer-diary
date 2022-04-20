@@ -1,7 +1,8 @@
 const express = require("express")
 const User = require("../models/userModel")
 const Jwt = require("jsonwebtoken")
-const authenticator = require("../middleware/authmiddleware")
+const authenticator = require("../Middlewares/authmiddleware")
+const uploadSingle = require("../Middlewares/upload")
 
 
 const router = express.Router()
@@ -27,15 +28,20 @@ router.patch("/edit-profile/:id", authenticator, async (req, res) => {
     }
 })
 
-router.post("/signup", async (req, res) => {
+router.post("/signup", uploadSingle("image"), async (req, res) => {
+    var obj = { ...req.body };
+    if (req.file !== undefined) {
+
+        obj["image"] = req.file.path;
+    }
     if (req.body.name && req.body.email && req.body.password) {
         try {
-            const user = await User.create(req.body)
+            const user = await User.create(obj)
             Jwt.sign({ user }, process.env.JWT_KEY, { expiresIn: "2h" }, (err, token) => {
                 if (err) {
                     res.json({ error: "please check details again" })
                 }
-                res.status(201).json({ user, auth: token })
+                res.status(201).json({ user, token: token })
             })
         }
         catch (err) {
@@ -55,7 +61,7 @@ router.post("/login", async (req, res) => {
             if (err) {
                 res.status(400).json({ error: err.message })
             }
-            res.status(200).json({ user, auth: token })
+            res.status(200).json({ user, token: token })
         })
     }
     catch (err) {
