@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import address from "../BackendAddress";
+import "../Css/signup.css";
 
 const Signup = () => {
   const [name, setName] = useState("");
@@ -13,13 +14,13 @@ const Signup = () => {
     axios
       .post(`${address}/user/signup`, { name, email, password })
       .then((data) => {
-        console.log(data.data);
         navigate("/");
       })
       .catch((err) => alert("Please provide accurate data"));
   };
   return (
-    <div>
+    <div className="signup">
+      <h1>Sign up</h1>
       <label htmlFor="">
         Name:{" "}
         <input
@@ -28,6 +29,7 @@ const Signup = () => {
           onChange={(e) => setName(e.target.value)}
         />
       </label>
+      <br />
       <label htmlFor="">
         Email:{" "}
         <input
@@ -36,6 +38,7 @@ const Signup = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
       </label>
+      <br />
       <label htmlFor="">
         Password:{" "}
         <input
@@ -44,6 +47,7 @@ const Signup = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
       </label>
+      <br />
       <button onClick={signup}>Signup</button>
     </div>
   );

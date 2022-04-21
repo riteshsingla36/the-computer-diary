@@ -1,7 +1,8 @@
 import axios from "axios";
 import address from "../BackendAddress";
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import "../Css/login.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -15,7 +16,7 @@ const Login = () => {
         if (data.data.user !== null) {
           localStorage.setItem("token", JSON.stringify(data.data.token));
           localStorage.setItem("user", JSON.stringify(data.data.user));
-          console.log(data.data);
+
           if (data.data.user.role === "user") {
             navigate("/");
           }
@@ -29,7 +30,8 @@ const Login = () => {
       .catch((err) => alert("Email or password is wrong"));
   };
   return (
-    <div>
+    <div className="login">
+      <h1>Login</h1>
       <label htmlFor="">
         Email:{" "}
         <input
@@ -38,6 +40,7 @@ const Login = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
       </label>
+      <br />
       <label htmlFor="">
         Password:{" "}
         <input
@@ -46,11 +49,12 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
       </label>
-
+      <br />
       <button onClick={login}>Login</button>
-
-      <label htmlFor="" onClick={() => navigate("/signup")}>
-        Not already a user Signup Here
+      <br />
+      <label htmlFor="" className="label-signup">
+        Not already a user{" "}
+        <span onClick={() => navigate("/signup")}> Signup Here</span>
       </label>
     </div>
   );
