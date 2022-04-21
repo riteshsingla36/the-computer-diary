@@ -13,6 +13,8 @@ import AdminHome from './Components/Admin/AdminHome';
 import CreateQuiz from './Components/Admin/CreateQuiz';
 import CreateQuestion from './Components/Admin/CreateQuestion';
 import CreateYoutube from './Components/Admin/CreateYoutube';
+import PrivateRoute from './Components/PrivateRoute';
+import AdminPrivateRoute from './Components/Admin/AdminPrivateRoute';
 
 
 
@@ -24,14 +26,18 @@ function App() {
         <Navbar />
         <div className="App">
           <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/quiz/:id' element={<QuizPage />} />
+            <Route element={<PrivateRoute />} >
+              <Route path='/' element={<Home />} />
+              <Route path='/quiz/:id' element={<QuizPage />} />
+              <Route element={<AdminPrivateRoute />} >
+                <Route path='/admin/home' element={<AdminHome />} />
+                <Route path="/admin/createquiz" element={<CreateQuiz />} />
+                <Route path="/admin/createquestion/:id" element={<CreateQuestion />} />
+                <Route path="/admin/createyoutube" element={<CreateYoutube />} />
+              </Route>
+            </Route>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path='/admin/home' element={<AdminHome />} />
-            <Route path="/admin/createquiz" element={<CreateQuiz />} />
-            <Route path="/admin/createquestion/:id" element={<CreateQuestion />} />
-            <Route path="/admin/createyoutube" element={<CreateYoutube />} />
           </Routes>
         </div>
       </Container>

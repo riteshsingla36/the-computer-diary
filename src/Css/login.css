@@ -1,0 +1,29 @@
+.login {
+    border: 1px solid silver;
+    width: fit-content;
+    padding: 20px;
+    margin: auto;
+    border-radius: 10px;
+    display: grid;
+}
+
+.login h1 {
+    text-align: center;
+}
+
+.label-signup span {
+    color: blue;
+    cursor: pointer;
+}
+
+.login button {
+    padding: 10px 5px;
+    width: 50%;
+    margin: auto;
+    border-radius: 20px;
+    background-color: transparent;
+}
+
+.login button:hover {
+    animation: bgcolor 1s forwards;
+}

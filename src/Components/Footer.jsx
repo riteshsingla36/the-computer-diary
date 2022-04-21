@@ -11,6 +11,11 @@ const Footer = () => {
     <div className="footer">
       <div>
         <span className="head">The Computer Diary</span>
+        <br />
+        <span>
+          The Computer Diary is a leading Ed Tech company striving to provide
+          the best learning material on technical and non-technical subjects.
+        </span>
       </div>
       <div>
         <span className="head">ABOUT US</span>
@@ -54,7 +59,7 @@ const Footer = () => {
       <div>
         <span className="head">CONTACT</span>
         <br />
-        <span>Tutorials Point India Private Limited</span>
+        <span>The Computer Diary India Private Limited</span>
         <br />
         <div className="social">
           <span>
