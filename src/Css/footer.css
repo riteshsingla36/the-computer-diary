@@ -48,19 +48,20 @@
 
 
 .social span .youtube:hover {
-    animation: rotate 1s;
+    animation: rotate 1s 2 alternate;
+    
 }
 .social span .linkedin:hover {
-    animation: rotate 1s;
+    animation: rotate 1s 2 alternate;
 }
 .social span .instagram:hover {
-    animation: rotate 1s;
+    animation: rotate 1s 2 alternate;
 }
 .social span .facebook:hover {
-    animation: rotate 1s;
+    animation: rotate 1s 2 alternate;
 }
 .social span .twitter:hover {
-    animation: rotate 1s;
+    animation: rotate 1s 2 alternate;
 }
 
 @keyframes rotate {

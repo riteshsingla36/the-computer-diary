@@ -1,6 +1,7 @@
 const router = require("express").Router()
 const uploadSingle = require("../Middlewares/upload");
 const Youtube = require('../Models/youtubeModel')
+const cloudinary = require("cloudinary")
 
 router.get("/", async (req, res) => {
     try {
@@ -23,19 +24,22 @@ router.get('/:id', async (req, res) => {
 })
 
 
-router.post('/', async (req, res) => {
+router.post('/', uploadSingle("image"), async (req, res) => {
+    
     var obj = { ...req.body };
     if (req.file !== undefined) {
 
         obj["image"] = req.file.path;
     }
+    console.log(obj)
     try {
-        const youtube = await Youtube.create(req.body);
+        const youtube = await Youtube.create(obj)
+
         res.status(201).send(youtube)
     } catch (error) {
         res.status(400).send({ message: error.message })
     }
-})
+});
 
 router.patch('/:id', async (req, res) => {
     try {
@@ -44,7 +48,7 @@ router.patch('/:id', async (req, res) => {
     } catch (error) {
         res.status(400).send({ message: error.message })
     }
-})
+});
 
 router.delete("/:id", async (req, res) => {
     try {

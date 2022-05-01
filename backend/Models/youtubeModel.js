@@ -3,8 +3,8 @@ const mongoose = require("mongoose")
 const youtubeSchema = mongoose.Schema({
     name: {
         type: String,
-        required: true,
-        unique: true
+        // required: true,
+        // unique: true
     },
     image: {
         type: String,
@@ -12,11 +12,11 @@ const youtubeSchema = mongoose.Schema({
     },
     link: {
         type: String,
-        required: true
+        // required: true
     },
     hours: {
         type: Number,
-        required: true
+        // required: true
     }
 })
 

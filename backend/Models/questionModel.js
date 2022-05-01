@@ -10,6 +10,9 @@ const questionSchema = mongoose.Schema({
     question: {
         type: String
     },
+    explaination: {
+        type: String
+    },
     options: [
         {
             type: Object,

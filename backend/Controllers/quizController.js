@@ -23,14 +23,14 @@ router.get('/:id', async (req, res) => {
 })
 
 
-router.post('/', async (req, res) => {
+router.post('/', uploadSingle("image"), async (req, res) => {
     var obj = { ...req.body };
     if (req.file !== undefined) {
 
         obj["image"] = req.file.path;
     }
     try {
-        const quiz = await Quiz.create(req.body);
+        const quiz = await Quiz.create(obj);
         res.status(201).send(quiz)
     } catch (error) {
         res.status(400).send({ message: error.message })

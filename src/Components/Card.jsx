@@ -1,28 +1,42 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../Css/card.css";
 
-const Card = () => {
+const Card = ({ type, ele }) => {
+  const navigate = useNavigate();
   return (
-    <div className="card">
-      <img
-        src="https://d3mxt5v3yxgcsr.cloudfront.net/courses/4870/course_4870_image.jpg"
-        alt="not found"
-      />
+    <>
+      {ele && (
+        <div className="card">
+          <img
+            src="https://d3mxt5v3yxgcsr.cloudfront.net/courses/4870/course_4870_image.jpg"
+            alt="not found"
+          />
 
-      <div className="details">
-        <p className="course-name"> Python full stack course</p>
-        <p className="tutor-details">By Kuldeep Sir</p>
-        <hr />
-        <div className="timings">
-          <span>4.5 Hours</span>
-          <span>1 ebook</span>
+          <div className="details">
+            <p className="course-name">{ele.name}</p>
+            <p className="tutor-details">By Kuldeep Sir</p>
+            <hr />
+            <div className="timings">
+              <span>{ele.hours} Hours</span>
+              {type === "Youtube" ? <span>{type}</span> : <span>1 {type}</span>}
+            </div>
+
+            <div className="price">Free</div>
+
+            <button
+              onClick={() => {
+                type === "Quiz"
+                  ? navigate(`quiz/${ele._id}`)
+                  : navigate(`${type === "Youtube" ? "/" : "/"}`);
+              }}
+            >
+              View Now
+            </button>
+          </div>
         </div>
-
-        <div className="price">Free</div>
-
-        <button>View Now</button>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 
