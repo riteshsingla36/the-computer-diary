@@ -14,6 +14,7 @@ const CreateQuestion = () => {
   const [isTrue2, setIsTrue2] = useState(false);
   const [isTrue3, setIsTrue3] = useState(false);
   const [isTrue4, setIsTrue4] = useState(false);
+  const [explaination, setExplaination] = useState("");
 
   const createQuestion = () => {
     axios
@@ -21,11 +22,12 @@ const CreateQuestion = () => {
         quiz: id,
         question,
         options: [
-          { answer1, isTrue1 },
-          { answer2, isTrue2 },
-          { answer3, isTrue3 },
-          { answer4, isTrue4 },
+          { answer: answer1, isTrue: isTrue1 },
+          { answer: answer2, isTrue: isTrue2 },
+          { answer: answer3, isTrue: isTrue3 },
+          { answer: answer4, isTrue: isTrue4 },
         ],
+        explaination: explaination,
       })
       .then((data) => alert("question created successfully"))
       .catch((err) => alert("some error occured"));
@@ -55,7 +57,7 @@ const CreateQuestion = () => {
         name=""
         id=""
         value={isTrue1}
-        onChange={(e) => setIsTrue1(e.target.value == "true" ? true : false)}
+        onChange={(e) => setIsTrue1(e.target.value === "true" ? true : false)}
       >
         <option value="false">false</option>
         <option value="true">true</option>
@@ -72,7 +74,7 @@ const CreateQuestion = () => {
         name=""
         id=""
         value={isTrue2}
-        onChange={(e) => setIsTrue2(e.target.value == "true" ? true : false)}
+        onChange={(e) => setIsTrue2(e.target.value === "true" ? true : false)}
       >
         <option value="false">false</option>
         <option value="true">true</option>
@@ -89,7 +91,7 @@ const CreateQuestion = () => {
         name=""
         id=""
         value={isTrue3}
-        onChange={(e) => setIsTrue3(e.target.value == "true" ? true : false)}
+        onChange={(e) => setIsTrue3(e.target.value === "true" ? true : false)}
       >
         <option value="false">false</option>
         <option value="true">true</option>
@@ -106,11 +108,23 @@ const CreateQuestion = () => {
         name=""
         id=""
         value={isTrue4}
-        onChange={(e) => setIsTrue4(e.target.value == "true" ? true : false)}
+        onChange={(e) => setIsTrue4(e.target.value === "true" ? true : false)}
       >
         <option value="false">false</option>
         <option value="true">true</option>
       </select>
+
+      <label htmlFor="">
+        Explaniation:{" "}
+        <textarea
+          name=""
+          id=""
+          cols="30"
+          rows="10"
+          value={question}
+          onChange={(e) => setExplaination(e.target.value)}
+        />
+      </label>
       <button onClick={createQuestion}>Create Question</button>
     </div>
   );

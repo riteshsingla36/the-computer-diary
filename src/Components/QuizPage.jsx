@@ -3,6 +3,7 @@ import React, { useLayoutEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import address from "../BackendAddress";
 
+
 import QuizSingleQuestion from "./QuizSingleQuestion";
 
 const QuizPage = () => {
@@ -25,6 +26,7 @@ const QuizPage = () => {
             index={index}
             question={question}
             key={question._id}
+ 
           />
         );
       })}

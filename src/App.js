@@ -15,6 +15,8 @@ import CreateQuestion from './Components/Admin/CreateQuestion';
 import CreateYoutube from './Components/Admin/CreateYoutube';
 import PrivateRoute from './Components/PrivateRoute';
 import AdminPrivateRoute from './Components/Admin/AdminPrivateRoute';
+import AllQuizzes from './Components/Admin/AllQuizzes';
+import AllYoutubes from './Components/Admin/AllYoutubes';
 
 
 
@@ -34,6 +36,8 @@ function App() {
                 <Route path="/admin/createquiz" element={<CreateQuiz />} />
                 <Route path="/admin/createquestion/:id" element={<CreateQuestion />} />
                 <Route path="/admin/createyoutube" element={<CreateYoutube />} />
+                <Route path="/admin/allquizzes" element={<AllQuizzes />} />
+                <Route path="/admin/allyoutubes" element={<AllYoutubes />} />
               </Route>
             </Route>
             <Route path="/login" element={<Login />} />
